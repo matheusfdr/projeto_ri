@@ -1,6 +1,9 @@
 # Dados raspados (HTMLs) - regeneráveis pelos scripts
 output_leis/
 
+# Índice invertido (~164 MB) - baixar do Google Drive, fora do git
+indice_projetos_lei.json
+
 # Python
 __pycache__/
 *.py[cod]

@@ -8,7 +8,7 @@ oferece uma **busca web** com ranqueamento por **TF-IDF**.
 
 ```
 output_leis/  ──[indexador.py]──>  indice_projetos_lei.json  ──[buscador_web.py]──>  busca web
- (50k HTMLs)                            (~164 MB, no repo via LFS)
+ (50k HTMLs)                            (~164 MB, baixar do Drive)
  só p/ regerar o índice                 basta isso para buscar
 ```
 
@@ -22,7 +22,6 @@ output_leis/  ──[indexador.py]──>  indice_projetos_lei.json  ──[busc
 ## Pré-requisitos
 
 - Python 3.8+
-- [Git LFS](https://git-lfs.com/) (o `indice_projetos_lei.json` é versionado via LFS)
 
 ```bash
 pip install flask nltk
@@ -36,26 +35,31 @@ pip install flask nltk
 ## Usar a busca (uso comum)
 
 Para **apenas pesquisar**, você **NÃO precisa** baixar o `output_leis/`.
-Basta o `indice_projetos_lei.json`, que já vem no repositório (via Git LFS).
+Basta o `indice_projetos_lei.json`.
 
-1. Clone o repositório e baixe o índice via LFS:
+1. Clone o repositório:
 
    ```bash
    git clone https://github.com/matheusfdr/projeto_ri.git
    cd projeto_ri
-   git lfs pull
    ```
 
-   > Sem o `git lfs pull` o `indice_projetos_lei.json` virá apenas como um
-   > ponteiro de texto, e a busca não funcionará.
+2. **Baixe o `indice_projetos_lei.json` (~164 MB) do Google Drive** e coloque-o
+   **na mesma pasta** do projeto (mesmo nível do `buscador_web.py`):
 
-2. Rode a interface web:
+   👉 https://drive.google.com/drive/folders/16D8lQeqwcW0Tswjb8h75HPiZx-H58MNe
+
+   > O índice **não** está no repositório por causa do tamanho (~164 MB). Sem o
+   > arquivo na pasta, o buscador avisa que não encontrou o índice e a busca não
+   > funciona.
+
+3. Rode a interface web:
 
    ```bash
    python buscador_web.py
    ```
 
-3. Abra no navegador: <http://localhost:5000>
+4. Abra no navegador: <http://localhost:5000>
 
 ---
 
@@ -101,5 +105,5 @@ partir dos HTMLs originais.
 |---|---|
 | `buscador_web.py` | Interface web de busca (Flask + TF-IDF) |
 | `indexador.py` | Gera o índice invertido a partir dos HTMLs |
-| `indice_projetos_lei.json` | Índice invertido (~164 MB, via Git LFS) |
+| `indice_projetos_lei.json` | Índice invertido (~164 MB) — **não versionado**, baixar do Google Drive |
 | `output_leis/` | HTMLs originais — **não versionado**, baixar do Google Drive |
