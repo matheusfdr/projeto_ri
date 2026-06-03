@@ -112,9 +112,11 @@ class MotorIndexacao:
         print("-----------------------------\n")
 
 def main():
-    # Caminho inserido
-    diretorio_entrada = r"C:\Users\Downloads\output_leis-20260510T224922Z-3-001\output_leis"
-    arquivo_saida = "indice_projetos_lei.json"
+    # Pasta com os HTMLs (baixe o output_leis do Google Drive e coloque na mesma
+    # pasta deste script). Veja o README.
+    pasta_script = os.path.dirname(os.path.abspath(__file__))
+    diretorio_entrada = os.path.join(pasta_script, "output_leis")
+    arquivo_saida = os.path.join(pasta_script, "indice_projetos_lei.json")
 
     # Executa a extração e o processamento de texto
     motor = MotorIndexacao()
