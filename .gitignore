@@ -1,0 +1,15 @@
+# Dados raspados (HTMLs) - regeneráveis pelos scripts
+output_leis/
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+
+# Editores / SO
+.vscode/
+.idea/
+Thumbs.db
+.DS_Store
